@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace LowkeysDrops.API.DTOs
 {
@@ -6,10 +6,10 @@ namespace LowkeysDrops.API.DTOs
     {
         [Required]
         public int IdUsuario { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El tipo de dirección es obligatorio.")]
+        [RegularExpression("^(CASA|TRABAJO)$", ErrorMessage = "El tipo de dirección debe ser CASA o TRABAJO.")]
         [StringLength(10)]
-        public string Tipo { get; set; } = null!; // CASA, TRABAJO
-        [Required]
+        public string Tipo { get; set; } = null!;        [Required]
         [StringLength(80)]
         public string Departamento { get; set; } = null!;
         [Required]
@@ -24,10 +24,10 @@ namespace LowkeysDrops.API.DTOs
 
     public class DireccionUpdateDto
     {
-        [Required]
+        [Required(ErrorMessage = "El tipo de dirección es obligatorio.")]
+        [RegularExpression("^(CASA|TRABAJO)$", ErrorMessage = "El tipo de dirección debe ser CASA o TRABAJO.")]
         [StringLength(10)]
-        public string Tipo { get; set; } = null!;
-        [Required]
+        public string Tipo { get; set; } = null!;        [Required]
         [StringLength(80)]
         public string Departamento { get; set; } = null!;
         [Required]
@@ -52,3 +52,4 @@ namespace LowkeysDrops.API.DTOs
         public DateTime FechaRegistro { get; set; }
     }
 }
+

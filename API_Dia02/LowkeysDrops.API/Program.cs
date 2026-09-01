@@ -1,4 +1,8 @@
+﻿using Microsoft.OpenApi;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,10 +25,47 @@ builder.Services.AddScoped<LowkeysDrops.API.Interfaces.IDireccionService, Lowkey
 builder.Services.AddScoped<LowkeysDrops.API.Interfaces.IPedidoService, LowkeysDrops.API.Services.PedidoService>();
 builder.Services.AddScoped<LowkeysDrops.API.Interfaces.IResenaService, LowkeysDrops.API.Services.ResenaService>();
 builder.Services.AddScoped<LowkeysDrops.API.Interfaces.IConsultasService, LowkeysDrops.API.Services.ConsultasService>();
+
+// JWT Authentication
+var jwtKey = builder.Configuration["Jwt:Key"] ?? "SuperSecretKeyForDevelopmentOnly1234567890!";
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtKey)),
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero
+    };
+});
+
+builder.Services.AddScoped<LowkeysDrops.API.Interfaces.IUsuarioRepository, LowkeysDrops.API.Repositories.UsuarioRepository>();
+builder.Services.AddScoped<LowkeysDrops.API.Interfaces.IAuthService, LowkeysDrops.API.Services.AuthService>();
+builder.Services.AddScoped<LowkeysDrops.API.Interfaces.IUsuarioService, LowkeysDrops.API.Services.UsuarioService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT"
+    });
+});
 
 var app = builder.Build();
 
@@ -38,8 +79,17 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<LowkeysDrops.API.Middleware.GlobalExceptionMiddleware>();
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
+
+
+
+
+
+

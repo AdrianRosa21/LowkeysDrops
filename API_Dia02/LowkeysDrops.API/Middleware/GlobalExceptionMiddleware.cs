@@ -34,9 +34,9 @@ namespace LowkeysDrops.API.Middleware
             var statusCode = (int)HttpStatusCode.InternalServerError;
             var message = "Error interno del servidor.";
 
-            if (exception is InvalidOperationException || exception is ArgumentException || exception.Message.Contains("THROW"))
+            if (exception is UnauthorizedAccessException)
             {
-                statusCode = (int)HttpStatusCode.BadRequest;
+                statusCode = (int)HttpStatusCode.Unauthorized;
                 message = exception.Message;
             }
             else if (exception is KeyNotFoundException)
@@ -44,13 +44,30 @@ namespace LowkeysDrops.API.Middleware
                 statusCode = (int)HttpStatusCode.NotFound;
                 message = exception.Message;
             }
+            else if (exception is InvalidOperationException || exception is ArgumentException || exception.Message.StartsWith("CONFLICT:"))
+            {
+                statusCode = (int)HttpStatusCode.BadRequest;
+                message = exception.Message.Replace("CONFLICT:", "");
+            }
             // EF Core DB update exceptions often wrap SQL exceptions
             else if (exception is Microsoft.EntityFrameworkCore.DbUpdateException dbEx)
             {
                 statusCode = (int)HttpStatusCode.Conflict;
-                message = dbEx.InnerException?.Message ?? dbEx.Message;
+                var innerMsg = dbEx.InnerException?.Message ?? dbEx.Message;
+                if (innerMsg.Contains("CK_") || innerMsg.Contains("conflicted with the CHECK constraint"))
+                {
+                    statusCode = (int)HttpStatusCode.BadRequest;
+                    message = "Los datos proporcionados no cumplen con las reglas de validación del sistema.";
+                }
+                else if (innerMsg.Contains("Cannot insert duplicate key") || innerMsg.Contains("Violation of UNIQUE KEY constraint"))
+                {
+                    message = "El registro ya existe o hay un conflicto de unicidad.";
+                }
+                else
+                {
+                    message = "Ocurrió un conflicto al guardar los cambios en la base de datos.";
+                }
             }
-            // SQL Server Throws customized errors starting with custom numbering (e.g. 50000)
             else if (exception is Microsoft.Data.SqlClient.SqlException sqlEx)
             {
                 if (sqlEx.Number >= 50000)
@@ -62,6 +79,15 @@ namespace LowkeysDrops.API.Middleware
                 {
                     statusCode = (int)HttpStatusCode.Conflict;
                     message = "El registro ya existe o hay un conflicto de unicidad.";
+                }
+                else if (sqlEx.Number == 547)
+                {
+                    statusCode = (int)HttpStatusCode.BadRequest;
+                    message = "Los datos proporcionados no cumplen con las reglas de validación (Check constraint).";
+                }
+                else
+                {
+                    message = "Ocurrió un error en la base de datos.";
                 }
             }
 
