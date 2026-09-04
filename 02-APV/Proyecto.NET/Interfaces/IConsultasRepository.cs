@@ -4,6 +4,7 @@ namespace LowkeysDrops.API.Interfaces {
         Task<IEnumerable<VwCatalogoDisponible>> GetCatalogoDisponibleAsync();
         Task<IEnumerable<VwPedidosResuman>> GetPedidosResumenAsync();
         Task<IEnumerable<VwPedidosResuman>> GetPedidosClienteAsync(int idCliente);
+        Task<IEnumerable<VwPedidosResuman>> GetPedidosRepartidorAsync(int idRepartidor);
         Task<IEnumerable<VwPedidosDisponiblesRepartidor>> GetPedidosDisponiblesRepartidorAsync();
         Task<IEnumerable<VwVentasEntregada>> GetVentasEntregadasAsync();
         Task<IEnumerable<VwAuditoriaReciente>> GetAuditoriaRecienteAsync();

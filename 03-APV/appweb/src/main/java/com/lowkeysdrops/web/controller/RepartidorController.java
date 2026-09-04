@@ -27,6 +27,12 @@ public class RepartidorController {
     @GetMapping
     public String dashboard(HttpSession session, Model model) {
         model.addAttribute("ultimoPedido", session.getAttribute("ULTIMO_PEDIDO"));
+        try {
+            var historial = apiClient.get("/api/Repartidor/pedidos/" + getRepartidorId(session), Object[].class);
+            model.addAttribute("historial", historial);
+        } catch (ApiException e) {
+            model.addAttribute("error", "No se pudo cargar el historial: " + e.getMessage());
+        }
         return "repartidor/index";
     }
 

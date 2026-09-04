@@ -16,5 +16,12 @@ namespace LowkeysDrops.API.Controllers
             var pedidos = await _service.GetPedidosDisponiblesRepartidorAsync();
             return Ok(pedidos);
         }
+
+        [HttpGet("pedidos/{idRepartidor}")]
+        public async Task<ActionResult> GetPedidosRepartidor(int idRepartidor)
+        {
+            var pedidos = await _service.GetPedidosRepartidorAsync(idRepartidor);
+            return Ok(pedidos);
+        }
     }
 }

@@ -21,6 +21,37 @@
                 <h3>Continuar con Pedido #<span th:text="${ultimoPedido}"></span></h3>
             </a>
         </div>
+        
+        <h3 style="margin-top: 3rem;">Historial de Entregas</h3>
+        <div class="card table-responsive" style="margin-top: 1rem;">
+            <table th:if="${historial != null and not #lists.isEmpty(historial)}">
+                <thead>
+                    <tr>
+                        <th>ID Pedido</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th>Estado Pedido</th>
+                        <th>Estado Entrega</th>
+                        <th>Total</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="p : ${historial}">
+                        <td th:text="${p.idPedido}"></td>
+                        <td th:text="${p.cliente}"></td>
+                        <td th:text="${#strings.substring(p.fechaPedido, 0, 10)}"></td>
+                        <td><span class="badge" th:text="${p.estadoPedido}"></span></td>
+                        <td><span class="badge" th:text="${p.estadoEntrega != null ? p.estadoEntrega : 'PENDIENTE'}"></span></td>
+                        <td th:text="${'$' + p.total}"></td>
+                        <td>
+                            <a th:href="@{'/repartidor/pedidos/' + ${p.idPedido} + '/detalle'}" class="btn" style="padding: 0.3rem 0.8rem;">Ver</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p th:if="${historial == null or #lists.isEmpty(historial)}">No tienes pedidos en tu historial.</p>
+        </div>
     </div>
     
     <div th:replace="~{fragments/footer :: footer}"></div>

@@ -19,6 +19,10 @@ namespace LowkeysDrops.API.Repositories {
         public async Task<IEnumerable<VwPedidosResuman>> GetPedidosClienteAsync(int idCliente) {
             return await _context.VwPedidosResumen.AsNoTracking().Where(p => p.IdCliente == idCliente).ToListAsync();
         }
+
+        public async Task<IEnumerable<VwPedidosResuman>> GetPedidosRepartidorAsync(int idRepartidor) {
+            return await _context.VwPedidosResumen.AsNoTracking().Where(p => p.IdRepartidor == idRepartidor).ToListAsync();
+        }
         
         public async Task<IEnumerable<VwPedidosDisponiblesRepartidor>> GetPedidosDisponiblesRepartidorAsync() {
             return await _context.VwPedidosDisponiblesRepartidors.AsNoTracking().ToListAsync();

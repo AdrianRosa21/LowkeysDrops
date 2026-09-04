@@ -9,6 +9,7 @@ namespace LowkeysDrops.API.Services {
         public async Task<IEnumerable<VwCatalogoDisponible>> GetCatalogoDisponibleAsync() { return await _repository.GetCatalogoDisponibleAsync(); }
         public async Task<IEnumerable<VwPedidosResuman>> GetPedidosResumenAsync() { return await _repository.GetPedidosResumenAsync(); }
         public async Task<IEnumerable<VwPedidosResuman>> GetPedidosClienteAsync(int idCliente) { return await _repository.GetPedidosClienteAsync(idCliente); }
+        public async Task<IEnumerable<VwPedidosResuman>> GetPedidosRepartidorAsync(int idRepartidor) { return await _repository.GetPedidosRepartidorAsync(idRepartidor); }
         public async Task<IEnumerable<VwPedidosDisponiblesRepartidor>> GetPedidosDisponiblesRepartidorAsync() { return await _repository.GetPedidosDisponiblesRepartidorAsync(); }
         public async Task<IEnumerable<VwVentasEntregada>> GetVentasEntregadasAsync() { return await _repository.GetVentasEntregadasAsync(); }
         public async Task<IEnumerable<VwAuditoriaReciente>> GetAuditoriaRecienteAsync() { return await _repository.GetAuditoriaRecienteAsync(); }
