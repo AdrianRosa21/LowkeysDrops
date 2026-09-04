@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de Pedido - Repartidor</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+    
+    <div class="container">
+        <h2>Detalle del Pedido #<span th:text="${pedido.idPedido}"></span></h2>
+        
+        <div th:replace="~{fragments/messages :: messages}"></div>
+        
+        <div class="card">
+            <h3>Información del Pedido</h3>
+            <p><strong>Estado Actual:</strong> <span class="badge" th:text="${pedido.estado}"></span></p>
+            <p th:if="${pedido.entrega != null}"><strong>Estado Entrega:</strong> <span class="badge" th:text="${pedido.entrega.estado}"></span></p>
+            
+            <p><strong>Subtotal:</strong> <span th:text="${'$' + pedido.subtotal}"></span></p>
+            <p><strong>Costo Envío:</strong> <span th:text="${'$' + pedido.costoEnvio}"></span></p>
+            <p><strong>Total a Cobrar:</strong> <span th:text="${'$' + pedido.total}" style="color:var(--accent); font-weight:bold;"></span></p>
+            
+            <div th:if="${pedido.pago != null}">
+                <p><strong>Método:</strong> <span th:text="${pedido.pago.metodo}"></span></p>
+                <p><strong>Estado del Pago:</strong> <span th:text="${pedido.pago.estado}"></span></p>
+            </div>
+            
+            <hr style="border-color:var(--border-color); margin: 1rem 0;">
+            
+            <div th:if="${pedido.estado == 'EN_PROCESO' and (pedido.entrega == null or pedido.entrega.estado == 'ASIGNADO')}">
+                <form th:action="@{'/repartidor/pedidos/' + ${pedido.idPedido} + '/en-camino'}" method="post">
+                    <button type="submit" class="btn" style="width:100%">Marcar En Camino</button>
+                </form>
+            </div>
+            
+            <div th:if="${pedido.entrega != null and pedido.entrega.estado == 'EN_CAMINO'}" style="margin-top: 1rem;">
+                <h4>Registrar Entrega Exitosa</h4>
+                <form th:action="@{'/repartidor/pedidos/' + ${pedido.idPedido} + '/entrega'}" method="post">
+                    <div class="form-group">
+                        <label>URL Foto de Evidencia</label>
+                        <input type="url" name="fotoEntregaUrl" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Observación (Opcional)</label>
+                        <textarea name="observacion" class="form-control" rows="2"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width:100%">Completar Entrega</button>
+                </form>
+                
+                <hr style="border-color:var(--border-color); margin: 2rem 0;">
+                
+                <h4>Registrar Entrega Fallida</h4>
+                <form th:action="@{'/repartidor/pedidos/' + ${pedido.idPedido} + '/entrega-fallida'}" method="post">
+                    <div class="form-group">
+                        <label>Motivo</label>
+                        <textarea name="observacion" class="form-control" rows="2" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-danger" style="width:100%" onsubmit="return confirm('¿Seguro que deseas marcar como fallida?');">Marcar como Fallida</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

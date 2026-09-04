@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Perfil - Lowkeys Drops</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+    
+    <div class="container" style="max-width: 600px; margin: 2rem auto;">
+        <h2>Mi Perfil</h2>
+        
+        <div th:replace="~{fragments/messages :: messages}"></div>
+        
+        <div class="card">
+            <form action="/cliente/perfil" method="post">
+                <div class="form-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" name="nombre" class="form-control" th:value="${usuario.nombre}" required>
+                </div>
+                <div class="form-group">
+                    <label>Correo ElectrÃ³nico</label>
+                    <input type="email" name="correo" class="form-control" th:value="${usuario.correo}" required>
+                </div>
+                <div class="form-group">
+                    <label>TelÃ©fono</label>
+                    <input type="text" name="telefono" class="form-control" th:value="${usuario.telefono}" required>
+                </div>
+                <div class="form-group">
+                    <label>DUI (Documento Ãšnico de Identidad)</label>
+                    <input type="text" name="dui" class="form-control" th:value="${usuario.dui}" required>
+                </div>
+                
+                <button type="submit" class="btn" style="width:100%; margin-top: 1rem;">Actualizar Perfil</button>
+                <a href="/cliente" class="btn" style="width:100%; text-align:center; display:block; margin-top: 1rem; background-color: #333; border: 1px solid #555;">Cancelar</a>
+            </form>
+        </div>
+    </div>
+    
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

@@ -9,7 +9,10 @@
     <div th:replace="~{fragments/navbar :: navbar}"></div>
     
     <div class="container">
-        <h2>Usuarios Registrados</h2>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2>Usuarios Registrados</h2>
+            <a href="/admin/repartidores/nuevo" class="btn" style="background-color: var(--accent); color: #000;">+ Crear Repartidor</a>
+        </div>
         <div th:replace="~{fragments/messages :: messages}"></div>
         
         <div class="card table-responsive">

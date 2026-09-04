@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Categorías - Admin</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+    
+    <div class="container">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h2>Categorías</h2>
+            <a href="/admin/categorias/nueva" class="btn">Nueva Categoría</a>
+        </div>
+        
+        <div th:replace="~{fragments/messages :: messages}"></div>
+        
+        <div class="card table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="c : ${categorias}">
+                        <td th:text="${c.idCategoria}"></td>
+                        <td th:text="${c.nombre}"></td>
+                        <td th:text="${c.descripcion}"></td>
+                        <td>
+                            <span class="badge" th:text="${c.estado ? 'Activo' : 'Inactivo'}"></span>
+                        </td>
+                        <td>
+                            <a th:href="@{'/admin/categorias/' + ${c.idCategoria} + '/editar'}" class="btn" style="padding: 0.5rem 1rem;">Editar</a>
+                            <form th:action="@{'/admin/categorias/' + ${c.idCategoria} + '/eliminar'}" method="post" style="display:inline;" onsubmit="return confirm('¿Seguro que deseas eliminar esta categoría?');">
+                                <button type="submit" class="btn btn-danger" style="padding: 0.5rem 1rem;">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>
