@@ -99,14 +99,26 @@ public class AdminController {
         return "admin/auditoria";
     }
 
+    @GetMapping("/pedidos/{id}")
+    public String verPedido(@PathVariable Integer id, Model model) {
+        try {
+            var pedido = apiClient.get("/api/Pedidos/" + id, Object.class);
+            model.addAttribute("pedido", pedido);
+            return "pedidos/detalle";
+        } catch (ApiException e) {
+            model.addAttribute("error", "Error al cargar pedido: " + e.getMessage());
+            return "admin/index";
+        }
+    }
+
     @PostMapping("/pedidos/{id}/verificar-pago")
     public String verificarPago(@PathVariable Integer id, @RequestParam String referencia, RedirectAttributes redirectAttributes) {
         try {
             apiClient.put("/api/Pedidos/" + id + "/pago/verificar", Map.of("referencia", referencia));
             redirectAttributes.addFlashAttribute("success", "Pago verificado correctamente.");
         } catch (ApiException e) {
-            redirectAttributes.addFlashAttribute("error", e.getMessage());
+            redirectAttributes.addFlashAttribute("error", "Error: " + e.getMessage());
         }
-        return "redirect:/cliente/pedidos/" + id; // Admin views detail in same template
+        return "redirect:/admin/pedidos/" + id;
     }
 }

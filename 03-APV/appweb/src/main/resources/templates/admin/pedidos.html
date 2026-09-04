@@ -37,7 +37,7 @@
                         <td th:text="${'$' + p.total}"></td>
                         <td th:text="${p.metodoPago}"></td>
                         <td th:text="${p.estadoPago}"></td>
-                        <td><a th:href="@{'/cliente/pedidos/' + ${p.idPedido}}" class="btn" style="padding: 0.5rem 1rem;">Ver</a></td>
+                        <td><a th:href="@{'/admin/pedidos/' + ${p.idPedido}}" class="btn" style="padding: 0.5rem 1rem;">Ver</a></td>
                     </tr>
                 </tbody>
             </table>
