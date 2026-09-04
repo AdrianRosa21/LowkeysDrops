@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Repartidor</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+    
+    <div class="container">
+        <h2>Bienvenido, <span th:text="${userName}"></span></h2>
+        
+        <div th:replace="~{fragments/messages :: messages}"></div>
+        
+        <div class="dashboard-grid">
+            <a href="/repartidor/pedidos" class="dash-card">
+                <h3>Ver Pedidos Disponibles</h3>
+            </a>
+            <a th:if="${ultimoPedido != null}" th:href="@{'/repartidor/pedidos/' + ${ultimoPedido} + '/detalle'}" class="dash-card" style="border-color: var(--accent);">
+                <h3>Continuar con Pedido #<span th:text="${ultimoPedido}"></span></h3>
+            </a>
+        </div>
+    </div>
+    
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

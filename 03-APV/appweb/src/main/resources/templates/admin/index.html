@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Admin</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+    
+    <div class="container">
+        <h2>Dashboard Admin - <span th:text="${userName}"></span></h2>
+        
+        <div th:replace="~{fragments/messages :: messages}"></div>
+        
+        <div class="dashboard-grid">
+            <a href="/admin/productos" class="dash-card"><h3>Productos</h3></a>
+            <a href="/admin/categorias" class="dash-card"><h3>Categorías</h3></a>
+            <a href="/admin/drops" class="dash-card"><h3>Drops</h3></a>
+            <a href="/admin/pedidos" class="dash-card"><h3>Pedidos</h3></a>
+            <a href="/admin/ventas" class="dash-card"><h3>Ventas</h3></a>
+            <a href="/admin/usuarios" class="dash-card"><h3>Usuarios</h3></a>
+            <a href="/admin/repartidores/nuevo" class="dash-card"><h3>Crear Repartidor</h3></a>
+            <a href="/admin/auditoria" class="dash-card"><h3>Auditoría</h3></a>
+        </div>
+    </div>
+    
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

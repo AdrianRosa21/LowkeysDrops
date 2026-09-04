@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Categoría - Admin</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+    
+    <div class="container">
+        <h2 th:text="${idCategoria == null ? 'Nueva Categoría' : 'Editar Categoría'}">Categoría</h2>
+        
+        <div th:replace="~{fragments/messages :: messages}"></div>
+        
+        <div class="card" style="max-width: 600px;">
+            <form th:action="@{${idCategoria == null ? '/admin/categorias/nueva' : '/admin/categorias/' + idCategoria + '/editar'}}" th:object="${categoria}" method="post">
+                
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" th:field="*{nombre}" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea th:field="*{descripcion}" class="form-control" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group" th:if="${idCategoria != null}">
+                    <label>Estado</label>
+                    <select th:field="*{estado}" class="form-control">
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                </div>
+                
+                <div style="margin-top: 1.5rem;">
+                    <button type="submit" class="btn">Guardar</button>
+                    <a href="/admin/categorias" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

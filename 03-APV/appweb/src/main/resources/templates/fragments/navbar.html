@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <nav class="navbar" th:fragment="navbar">
+        <div class="nav-brand">
+            <a href="/" style="display: flex; align-items: center; text-decoration: none;">
+                <img th:src="@{/img/logo.png}" alt="Lowkeys Drops Logo" style="height: 35px; margin-right: 15px; filter: drop-shadow(0 0 5px rgba(255,0,0,0.3));">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="/catalogo">Catálogo</a>
+            
+            <th:block th:if="${userRole == null}">
+                <a href="/login">Login</a>
+                <a href="/registro">Registro</a>
+            </th:block>
+            
+            <th:block th:if="${userRole == 'CLIENTE'}">
+                <a href="/cliente">Mi cuenta</a>
+                <a href="/cliente/direcciones">Direcciones</a>
+                <a href="/catalogo">Nuevo pedido</a>
+                <a href="/logout">Cerrar sesión</a>
+            </th:block>
+            
+            <th:block th:if="${userRole == 'ADMIN'}">
+                <a href="/admin">Dashboard</a>
+                <a href="/admin/productos">Productos</a>
+                <a href="/admin/categorias">Categorías</a>
+                <a href="/admin/drops">Drops</a>
+                <a href="/admin/pedidos">Pedidos</a>
+                <a href="/admin/usuarios">Usuarios</a>
+                <a href="/admin/ventas">Ventas</a>
+                <a href="/admin/auditoria">Auditoría</a>
+                <a href="/logout">Cerrar sesión</a>
+            </th:block>
+            
+            <th:block th:if="${userRole == 'REPARTIDOR'}">
+                <a href="/repartidor">Dashboard</a>
+                <a href="/repartidor/pedidos">Pedidos disponibles</a>
+                <a href="/logout">Cerrar sesión</a>
+            </th:block>
+        </div>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,181 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|c:\\users\\adria\\source\\repos\\lowkeysdrops\\lowkeysdrops.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|solutionrelative:lowkeysdrops.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|c:\\users\\adria\\source\\repos\\lowkeysdrops\\lowkeysdrops.api\\middleware\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|solutionrelative:lowkeysdrops.api\\middleware\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|c:\\users\\adria\\source\\repos\\lowkeysdrops\\lowkeysdrops.api\\interfaces\\ipedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|solutionrelative:lowkeysdrops.api\\interfaces\\ipedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|c:\\users\\adria\\source\\repos\\lowkeysdrops\\lowkeysdrops.api\\controllers\\repartidorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|solutionrelative:lowkeysdrops.api\\controllers\\repartidorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|c:\\users\\adria\\source\\repos\\lowkeysdrops\\lowkeysdrops.api\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|solutionrelative:lowkeysdrops.api\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|c:\\users\\adria\\source\\repos\\lowkeysdrops\\lowkeysdrops.api\\data\\lowkeysdropsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|solutionrelative:lowkeysdrops.api\\data\\lowkeysdropsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|c:\\users\\adria\\source\\repos\\lowkeysdrops\\lowkeysdrops.api\\services\\consultasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|solutionrelative:lowkeysdrops.api\\services\\consultasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|c:\\users\\adria\\source\\repos\\lowkeysdrops\\lowkeysdrops.api\\repositories\\direccionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|solutionrelative:lowkeysdrops.api\\repositories\\direccionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|c:\\users\\adria\\source\\repos\\lowkeysdrops\\lowkeysdrops.api\\repositories\\categoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|solutionrelative:lowkeysdrops.api\\repositories\\categoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|c:\\users\\adria\\source\\repos\\lowkeysdrops\\lowkeysdrops.api\\models\\entities\\vwventasentregada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A85F620B-2670-4105-A672-A9FD5BD27CFC}|LowkeysDrops.API\\LowkeysDrops.API.csproj|solutionrelative:lowkeysdrops.api\\models\\entities\\vwventasentregada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 313,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GlobalExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Middleware\\GlobalExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "LowkeysDrops.API\\Middleware\\GlobalExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Middleware\\GlobalExceptionMiddleware.cs",
+              "RelativeToolTip": "LowkeysDrops.API\\Middleware\\GlobalExceptionMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T23:52:52.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IPedidoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Interfaces\\IPedidoRepository.cs",
+              "RelativeDocumentMoniker": "LowkeysDrops.API\\Interfaces\\IPedidoRepository.cs",
+              "ToolTip": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Interfaces\\IPedidoRepository.cs",
+              "RelativeToolTip": "LowkeysDrops.API\\Interfaces\\IPedidoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T23:52:42.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RepartidorController.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Controllers\\RepartidorController.cs",
+              "RelativeDocumentMoniker": "LowkeysDrops.API\\Controllers\\RepartidorController.cs",
+              "ToolTip": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Controllers\\RepartidorController.cs",
+              "RelativeToolTip": "LowkeysDrops.API\\Controllers\\RepartidorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T23:52:29.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "LowkeysDrops.API\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "LowkeysDrops.API\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T23:52:19.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LowkeysDropsDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Data\\LowkeysDropsDbContext.cs",
+              "RelativeDocumentMoniker": "LowkeysDrops.API\\Data\\LowkeysDropsDbContext.cs",
+              "ToolTip": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Data\\LowkeysDropsDbContext.cs",
+              "RelativeToolTip": "LowkeysDrops.API\\Data\\LowkeysDropsDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T23:52:08.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ConsultasService.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Services\\ConsultasService.cs",
+              "RelativeDocumentMoniker": "LowkeysDrops.API\\Services\\ConsultasService.cs",
+              "ToolTip": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Services\\ConsultasService.cs",
+              "RelativeToolTip": "LowkeysDrops.API\\Services\\ConsultasService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T23:51:53.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Program.cs",
+              "RelativeDocumentMoniker": "LowkeysDrops.API\\Program.cs",
+              "ToolTip": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Program.cs*",
+              "RelativeToolTip": "LowkeysDrops.API\\Program.cs*",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAmwFgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T23:49:44.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DireccionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Repositories\\DireccionRepository.cs",
+              "RelativeDocumentMoniker": "LowkeysDrops.API\\Repositories\\DireccionRepository.cs",
+              "ToolTip": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Repositories\\DireccionRepository.cs",
+              "RelativeToolTip": "LowkeysDrops.API\\Repositories\\DireccionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T23:51:28.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CategoriaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Repositories\\CategoriaRepository.cs",
+              "RelativeDocumentMoniker": "LowkeysDrops.API\\Repositories\\CategoriaRepository.cs",
+              "ToolTip": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Repositories\\CategoriaRepository.cs",
+              "RelativeToolTip": "LowkeysDrops.API\\Repositories\\CategoriaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T23:51:16.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "VwVentasEntregada.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Models\\Entities\\VwVentasEntregada.cs",
+              "RelativeDocumentMoniker": "LowkeysDrops.API\\Models\\Entities\\VwVentasEntregada.cs",
+              "ToolTip": "C:\\Users\\adria\\source\\repos\\LowkeysDrops\\LowkeysDrops.API\\Models\\Entities\\VwVentasEntregada.cs",
+              "RelativeToolTip": "LowkeysDrops.API\\Models\\Entities\\VwVentasEntregada.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T23:50:49.342Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

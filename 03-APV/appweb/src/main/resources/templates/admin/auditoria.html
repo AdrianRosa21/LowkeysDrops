@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Auditoría - Admin</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+    
+    <div class="container">
+        <h2>Registro de Auditoría</h2>
+        <div th:replace="~{fragments/messages :: messages}"></div>
+        
+        <div class="card table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tabla</th>
+                        <th>Acción</th>
+                        <th>Fecha</th>
+                        <th>Datos Anteriores</th>
+                        <th>Datos Nuevos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="a : ${auditoria}">
+                        <td th:text="${a.idAuditoria}"></td>
+                        <td th:text="${a.tabla}"></td>
+                        <td><span class="badge" th:text="${a.accion}"></span></td>
+                        <td th:text="${#strings.substring(a.fecha,0,10)}"></td>
+                        <td>
+                            <details th:if="${a.datosAnteriores}">
+                                <summary>Ver</summary>
+                                <pre style="font-size:0.8rem; background:#111; padding:0.5rem;" th:text="${a.datosAnteriores}"></pre>
+                            </details>
+                        </td>
+                        <td>
+                            <details th:if="${a.datosNuevos}">
+                                <summary>Ver</summary>
+                                <pre style="font-size:0.8rem; background:#111; padding:0.5rem;" th:text="${a.datosNuevos}"></pre>
+                            </details>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedidos - Admin</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+    
+    <div class="container">
+        <h2>Listado de Pedidos</h2>
+        <div th:replace="~{fragments/messages :: messages}"></div>
+        
+        <div class="card table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Pedido</th>
+                        <th>Fecha</th>
+                        <th>Estado Pedido</th>
+                        <th>Cliente</th>
+                        <th>Dirección</th>
+                        <th>Total</th>
+                        <th>Método Pago</th>
+                        <th>Estado Pago</th>
+                        <th>Detalle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="p : ${pedidos}">
+                        <td th:text="${p.idPedido}"></td>
+                        <td th:text="${#strings.substring(p.fechaPedido,0,10)}"></td>
+                        <td><span class="badge" th:text="${p.estadoPedido}"></span></td>
+                        <td th:text="${p.cliente}"></td>
+                        <td th:text="${p.departamento + ', ' + p.municipio}"></td>
+                        <td th:text="${'$' + p.total}"></td>
+                        <td th:text="${p.metodoPago}"></td>
+                        <td th:text="${p.estadoPago}"></td>
+                        <td><a th:href="@{'/cliente/pedidos/' + ${p.idPedido}}" class="btn" style="padding: 0.5rem 1rem;">Ver</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>
