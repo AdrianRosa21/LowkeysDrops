@@ -58,9 +58,13 @@
                 <p th:if="${pedido.entrega.fechaEntrega}"><strong>Entregado el:</strong> <span th:text="${#strings.substring(pedido.entrega.fechaEntrega,0,10)}"></span></p>
             </div>
             
-            <div th:if="${userRole == 'CLIENTE' and pedido.estado == 'PENDIENTE_CONFIRMACION'}" style="margin-top: 2rem;">
+            <hr style="border-color:var(--border-color); margin: 2rem 0;">
+            
+            <div th:if="${userRole == 'CLIENTE' and pedido.estado != 'ENTREGADO' and pedido.entrega != null and pedido.entrega.estado == 'ENTREGADA'}" style="margin-top: 2rem;">
+                <h4>Confirmar Recepción</h4>
+                <p>El repartidor ha marcado este pedido como entregado (puedes ver la foto arriba si aplica). Por favor, confirma que lo recibiste para finalizar el proceso.</p>
                 <form th:action="@{'/cliente/pedidos/' + ${pedido.idPedido} + '/confirmar-recepcion'}" method="post">
-                    <button type="submit" class="btn">Confirmar Recepción</button>
+                    <button type="submit" class="btn" style="width: 100%;">Sí, ya recibí mi pedido</button>
                 </form>
             </div>
 

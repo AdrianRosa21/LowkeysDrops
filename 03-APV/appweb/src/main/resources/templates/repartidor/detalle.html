@@ -29,7 +29,7 @@
             
             <hr style="border-color:var(--border-color); margin: 1rem 0;">
             
-            <div th:if="${pedido.estado == 'EN_PROCESO' and (pedido.entrega == null or pedido.entrega.estado == 'ASIGNADO')}">
+            <div th:if="${(pedido.estado == 'PENDIENTE' or pedido.estado == 'EN_PROCESO') and (pedido.entrega == null or pedido.entrega.estado == 'ASIGNADO' or pedido.entrega.estado == 'PENDIENTE')}">
                 <form th:action="@{'/repartidor/pedidos/' + ${pedido.idPedido} + '/en-camino'}" method="post">
                     <button type="submit" class="btn" style="width:100%">Marcar En Camino</button>
                 </form>
